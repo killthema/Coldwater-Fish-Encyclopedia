@@ -1,0 +1,63 @@
+/* [역할] 전체 페이지의 배경을 하늘색 그라데이션으로 채웁니다. */
+.menu-page {
+    width: 100%;
+    min-height: 100vh;
+    /* [수정] 사진과 똑같은 수직 그라데이션 적용 */
+    background: linear-gradient(to bottom, #e0f7fa 0%, #80deea 100%);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* [역할] 상단 바를 검은색으로 고정하고 메뉴를 가로로 배치합니다. */
+.black-header {
+    position: fixed;         /* [역할] 스크롤해도 화면 상단에 고정됨 */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #333;  /* 묵직한 검은색 */
+    display: flex;
+    justify-content: center; /* 메뉴들을 가로 중앙으로 정렬 */
+    align-items: center;
+    z-index: 1000;
+}
+
+/* [역할] 메뉴 항목들의 간격과 글자 스타일 설정 */
+.nav-inner {
+    display: flex;
+    gap: 30px;               /* 글자들 사이의 간격 */
+}
+
+.nav-item {
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #80deea;          /* 마우스 올리면 배경색과 맞춘 하늘색으로 변경 */
+}
+
+.logout {
+    color: #ff8a80;          /* 로그아웃은 살짝 붉은 톤으로 강조 */
+    margin-left: 20px;
+}
+
+/* [역할] 중앙의 "냉수어종의 생존을 위한 기록" 텍스트 배치 */
+.main-content {
+    flex: 1;                 /* 남은 화면 전체를 차지하게 함 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center;     /* 세로 중앙 정렬 */
+}
+
+.main-title {
+    font-size: 24px;
+    color: #37474f;          /* 짙은 회색으로 가독성 확보 */
+    font-weight: bold;
+    letter-spacing: 1px;     /* 글자 간격 살짝 넓힘 */
+}
