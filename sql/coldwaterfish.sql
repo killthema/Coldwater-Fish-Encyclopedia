@@ -43,7 +43,7 @@ CREATE TABLE `ai_temp` (
 LOCK TABLES `ai_temp` WRITE;
 /*!40000 ALTER TABLE `ai_temp` DISABLE KEYS */;
 INSERT INTO `ai_temp` VALUES
-(1,1,28.2,18.5,'위험','2026-02-11 10:26:17');
+(1,1,28.2,18.5,'위험','2026-02-13 14:07:21');
 /*!40000 ALTER TABLE `ai_temp` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -89,7 +89,7 @@ CREATE TABLE `fish_compatibility` (
   PRIMARY KEY (`id`),
   KEY `fk_fc_species` (`species_id`),
   CONSTRAINT `fk_fc_species` FOREIGN KEY (`species_id`) REFERENCES `fish_species` (`species_id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=401 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='물고기 합사 규칙';
+) ENGINE=InnoDB AUTO_INCREMENT=512 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='물고기 합사 규칙';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -613,7 +613,7 @@ CREATE TABLE `member_account` (
 LOCK TABLES `member_account` WRITE;
 /*!40000 ALTER TABLE `member_account` DISABLE KEYS */;
 INSERT INTO `member_account` VALUES
-(1,'trout_master','secure_pass123!','구민우','010-5418-1638','3자 수조 송어 사육 중','2026-02-11 10:19:08',NULL,NULL);
+(1,'trout_master','secure_pass123!','구민우','010-5418-1638','3자 수조 송어 사육 중','2026-02-13 14:06:13',NULL,NULL);
 /*!40000 ALTER TABLE `member_account` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -650,9 +650,9 @@ CREATE TABLE `my_tanks` (
 LOCK TABLES `my_tanks` WRITE;
 /*!40000 ALTER TABLE `my_tanks` DISABLE KEYS */;
 INSERT INTO `my_tanks` VALUES
-(1,1,'거실 1번 수조',9,'3자 광폭','무지개 송어','2026-02-11 10:22:02','물갈이 완료','2026-02-11 10:22:02',NULL),
-(2,1,'거실 2번 수조',4,'2자 광폭','곤들매기','2026-02-11 10:22:02','먹이 급여함','2026-02-11 10:22:02',NULL),
-(3,1,'거실 3번 수조',20,'3자 광폭','황어','2026-02-11 10:22:02','합사 테스트 중','2026-02-11 10:22:02',NULL);
+(1,1,'거실 1번 수조',9,'3자 광폭','무지개 송어','2026-02-13 14:06:40','물갈이 완료','2026-02-13 14:06:40',NULL),
+(2,1,'거실 2번 수조',4,'2자 광폭','곤들매기','2026-02-13 14:06:40','먹이 급여함','2026-02-13 14:06:40',NULL),
+(3,1,'거실 3번 수조',20,'3자 광폭','황어','2026-02-13 14:06:40','합사 테스트 중','2026-02-13 14:06:40',NULL);
 /*!40000 ALTER TABLE `my_tanks` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -700,4 +700,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*M!100616 SET NOTE_VERBOSITY=@OLD_NOTE_VERBOSITY */;
 
--- Dump completed on 2026-02-13 11:54:11
+-- Dump completed on 2026-02-13 17:29:58

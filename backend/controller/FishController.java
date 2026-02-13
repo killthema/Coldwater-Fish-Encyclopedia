@@ -21,7 +21,8 @@ import java.util.Optional;
  */
 @RestController
 @RequestMapping("/api/fish-list")
-@CrossOrigin(origins = "http://localhost:5173") // 리액트 서버 포트 허용
+// [수정] 여기도 포트를 두 개 다 적어주거나, 아예 안전하게 WebConfig 설정을 믿고 생략해도 됩니다.
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174"})
 @RequiredArgsConstructor
 public class FishController {
 
@@ -41,8 +42,13 @@ public class FishController {
      * [2. 검색 기능]: 이름으로 물고기 찾기
      * 주소: GET /api/fish-list/search?keyword=송어
      */
+    /**
+     * [2. 검색 기능]: 이름으로 물고기 찾기
+     * [작동 순서]: 리액트가 보낸 'name' 파라미터를 받아서 DB에서 검색합니다. [cite: 2026-01-06]
+     */
     @GetMapping("/search")
-    public List<Fish> searchFish(@RequestParam String keyword) {
+// [수정] 리액트가 보내는 'name'이라는 글자를 'keyword' 변수에 담으라고 강제 지정합니다.
+    public List<Fish> searchFish(@RequestParam("keyword") String keyword) {
         return fishRepository.findByNameContaining(keyword);
     }
 

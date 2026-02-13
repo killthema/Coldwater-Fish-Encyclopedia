@@ -1,17 +1,32 @@
+/**
+ * [파일의 역할]
+ * 리액트(5173)와 스프링 부트(8090) 사이의 보안 장벽을 완전히 허물어주는 '마스터키'입니다.
+ */
 package com.example.coldwatefishproject.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
-@Configuration // "이것은 설정 파일입니다"라는 명찰
+@Configuration
 public class WebConfig implements WebMvcConfigurer {
 
+    /**
+     * [수정 포인트]
+     * localhost의 모든 포트(*)에서 오는 요청을 허용하도록 '마스터키'를 만듭니다. [cite: 2026-01-06]
+     */
+    /**
+     * [파일의 역할]
+     * 리액트 포트 번호가 5173, 5174, 5175 중 무엇이든 상관없이
+     * 보안 문(CORS)을 열어주는 마스터 설정입니다. [cite: 2026-01-06]
+     */
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/**") // 모든 주소로 들어오는 요청에 대해
-                .allowedOrigins("http://localhost:5173") //  리액트(5173)의 접속을 허락한다!
-                .allowedMethods("GET", "POST", "PUT", "DELETE") // 이 방식들을 허용한다
-                .allowCredentials(true); // 로그인 정보(쿠키 등)도 통과시켜준다
+        registry.addMapping("/**")
+                // [중요] .allowedOrigins 대신 Patterns를 써서 모든 포트를 허용합니다.
+                .allowedOriginPatterns("http://localhost:*")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                .allowedHeaders("*")
+                .allowCredentials(true);
     }
 }

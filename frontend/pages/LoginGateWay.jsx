@@ -1,15 +1,10 @@
-/**
- * [파일의 역할]
- * 앱의 첫 인상을 결정하는 랜딩 페이지이자 로그인 창입니다. [cite: 2026-01-06]
- * 왼쪽에는 냉수어종(산천어) 소개를, 오른쪽에는 로그인 카드를 배치하여 
- * 시각적인 효과와 기능을 동시에 제공합니다.
- */
+
 
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { memberApi } from '../api/api'; //
+import { memberApi } from '../api/api'; 
 import '../App.css'; 
-import masuImage from '../assets/masu.jpg'; //
+import masuImage from '../assets/masu.jpg'; 
 
 const LoginGateWay = () => {
   const navigate = useNavigate();
@@ -70,7 +65,7 @@ const LoginGateWay = () => {
         </div>
         
         <ul className="feature-list">
-          <li> <strong>이친구의 이름이 뭔지 아시나요?</strong> 산천어에요 [cite: 2026-02-11]</li>
+          <li> <strong>이친구의 이름이 뭔지 아시나요?</strong> 산천어에요 </li>
           <li> <strong>가족이 되는 건 어때요?</strong> 냉수어 탐험을 지금 시작해 보세요!</li>
         </ul>
       </div>
@@ -98,7 +93,7 @@ const LoginGateWay = () => {
         </form>
         
         <div style={{marginTop: '20px', fontSize: '0.9rem'}}>
-          {/* [수정 포인트] App.jsx의 경로인 '/SignupPage'와 일치시킴 */}
+         
           <button onClick={() => navigate('/SignupPage')} className="btn-link">
             처음 오셨나요? <strong>회원가입</strong>
           </button>
