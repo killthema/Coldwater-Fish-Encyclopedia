@@ -1,0 +1,56 @@
+/* [역할] 상단 검은색 바를 화면 맨 위로 밀착시키고 전체 너비로 확장합니다. */
+.header {
+    display: flex;
+    justify-content: center; 
+    align-items: center;     
+    
+    /* [수정 포인트] 화면 맨 위로 붙이고 좌우를 꽉 채움 */
+    position: fixed;         
+    top: 0;                  
+    left: 0;                
+    width: 100%;             
+    
+    height: 60px;           
+    background: #333;        
+    border-bottom: 2px solid black;
+    color: white;
+    z-index: 1000;           
+}
+
+/* [역할] 헤더가 fixed가 되면 아래 요소들이 가려지므로, 본문 컨테이너에 여백을 줍니다. */
+.menu-wrapper {
+    padding-top: 60px;       /* [수정] 헤더 높이만큼 본문을 아래로 밀어줌 */
+}
+
+/* [역할] 메뉴 글자 간격 설정 */
+.nav {
+    display: flex;
+    gap: 40px;               /* [역할] 글자 사이의 간격 */
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.chatbot-zone {
+    width: 800px;
+    height: 300px; /* 챗봇이 들어오기 딱 좋은 넉넉한 높이 */
+    margin: 40px auto;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* [작동 순서] 사용자가 마우스를 올리면 이곳이 클릭 가능한 영역임을 시각적으로 보여줍니다. */
+
+
+.chatbot-zone:hover {
+    background: rgba(255, 255, 255, 0.1); /* 살짝 밝아지는 효과 */
+    border: 1px solid #3498db;          
+    box-shadow: 0 0 20px rgba(52, 152, 219, 0.2);
+}
