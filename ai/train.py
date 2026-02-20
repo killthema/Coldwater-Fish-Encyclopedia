@@ -24,7 +24,7 @@ x = GlobalAveragePooling2D()(base_model.output)
 predictions = Dense(train_generator.num_classes, activation='softmax')(x)
 model = Model(inputs=base_model.input, outputs=predictions)
 
-# [작동 순서] 3. 학습 시작! (이 과정이 끝나야 '뇌'가 만들어집니다)
+# [작동 순서] 3. 학습 시작!
 model.compile(optimizer='adam', loss='categorical_crossentropy', metrics=['accuracy'])
 model.fit(train_generator, epochs=10)
 
